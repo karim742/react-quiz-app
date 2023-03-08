@@ -6,8 +6,8 @@ import {
   query,
   ref,
   startAt,
-} from "firebase/database";
-import { useEffect, useState } from "react";
+} from 'firebase/database';
+import { useEffect, useState } from 'react';
 
 export default function useVideosList(page) {
   const [loading, setLoading] = useState(true);
@@ -19,11 +19,11 @@ export default function useVideosList(page) {
     async function fetchVideos() {
       // database related works
       const db = getDatabase();
-      const videosRef = ref(db, "videos");
+      const videosRef = ref(db, 'videos');
       const videoQuery = query(
         videosRef,
         orderByKey(),
-        startAt("" + page),
+        startAt('' + page),
         limitToFirst(8)
       );
 
